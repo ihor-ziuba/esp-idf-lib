@@ -506,3 +506,8 @@ esp_err_t mcp23x17_set_interrupt(mcp23x17_t *dev, uint8_t pin, mcp23x17_gpio_int
 {
     return mcp23x17_port_set_interrupt(dev, BV(pin), intr);
 }
+
+esp_err_t mcp23x17_port_set_polarity(mcp23x17_t *dev, uint16_t val)
+{
+    return write_reg_16(dev, REG_IPOLA, val);
+}

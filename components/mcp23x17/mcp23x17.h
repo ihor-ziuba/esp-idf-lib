@@ -332,6 +332,16 @@ esp_err_t mcp23x17_port_set_interrupt(mcp23x17_t *dev, uint16_t mask, mcp23x17_g
  */
 esp_err_t mcp23x17_set_interrupt(mcp23x17_t *dev, uint8_t pin, mcp23x17_gpio_intr_t intr);
 
+/**
+ * @brief Set GPIO polarity
+ *
+ * 0 - regular polarity, 1 - inverted polarity
+ *
+ * @param dev Pointer to device descriptor
+ * @param val Polarity, 0 bit for PORTA/GPIO0..15 bit for PORTB/GPIO7
+ * @return `ESP_OK` on success
+ */
+esp_err_t mcp23x17_port_set_polarity(mcp23x17_t *dev, uint16_t val);
 
 #ifdef __cplusplus
 }
